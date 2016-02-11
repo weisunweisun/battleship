@@ -71,7 +71,7 @@ class DefaultController extends Controller
 
         return $this->render('default/index.html.twig', array(
             'outputGrid' => $this->outputGrid(),
-            'message' => 'Are you ready? Good luck!'
+            'message' => 'Êtes-vous prêt? Bonne chance!'
         ));
     }
 
@@ -123,26 +123,26 @@ class DefaultController extends Controller
     public function checkCoordinates($coordinates)
     {
         if (!$this->isValidCoord($coordinates)) {
-            return  'Error: Please enter a valid coordinate';
+            return  'Erreur: Merci de rentrer des coordonnés valides';
         } else {
             if ($this->getSuccessHits() == 13) {
-                return 'You won! It took you '.$this->getAttempts().' turns to win.  Refresh the page to start a new game.';
+                return 'Vous avez gagné! Cela vous a pris '.$this->getAttempts().' tirs pour gagner.  Refresh la page pour commencer une nouvelle partie.';
             } else {
                 $converted_coord = $this->convertCoord($coordinates);
                 $hit = $this->checkHit($converted_coord);
                 if ($hit) {
                     $this->addHits($converted_coord);
                     if ($this->getSuccessHits() == 13) {
-                        return 'You won! It took you '.$this->getAttempts().' turns to win.  Refresh the page to start a new game.';
+                        return 'Vous avez gagné! Cela vous a pris '.$this->getAttempts().' tirs pour gagner.  Refresh la page pour commencer une nouvelle partie.';
                     }
                     if ($this->checkSunkShip($converted_coord)) {
-                        return 'Congratulation! You have sunk a ship!';
+                        return 'Bravo! Vous avez coulé un bateau!';
                     } else {
-                        return 'Hit!';
+                        return 'Touché!';
                     }
                 } else {
                     $this->addMiss($converted_coord);
-                    return 'Miss!';
+                    return 'Raté! :(';
                 }
             }
         }
