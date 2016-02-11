@@ -100,6 +100,7 @@ abstract class Ship
      * @return boolean
      *
      */
+
     public function overlaps($coord)
     {
         foreach ($this->getCoordinates() as $s_coord) {
@@ -116,6 +117,7 @@ abstract class Ship
      * @param $hits array
      * @return boolean
      */
+
     public function isSunk($hits)
     {
         $total_hits = 0;

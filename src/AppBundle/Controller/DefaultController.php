@@ -69,7 +69,6 @@ class DefaultController extends Controller
 
         $this->saveSetting();
 
-        // replace this example code with whatever you need
         return $this->render('default/index.html.twig', array(
             'outputGrid' => $this->outputGrid(),
             'message' => 'Are you ready? Good luck!'
@@ -107,7 +106,6 @@ class DefaultController extends Controller
 
         $this->saveSetting();
 
-        // replace this example code with whatever you need
         return $this->render('default/index.html.twig', array(
             'outputGrid' => $this->outputGrid(),
             'message'   => $message
@@ -154,6 +152,7 @@ class DefaultController extends Controller
      * Returns the HTML of the grid table
      *
      */
+
     public function outputGrid()
     {
         $grid = '<table>';
@@ -236,6 +235,7 @@ class DefaultController extends Controller
      * @return string
      *
      */
+
     private function convertCoord($coord)
     {
         $int_coord = ($coord[1] == 0) ? 10 : $coord[1];
@@ -256,6 +256,7 @@ class DefaultController extends Controller
      * @return boolean
      *
      */
+
     private function checkHit($coord)
     {
         foreach ($this->getShips() as $ship) {
@@ -366,7 +367,7 @@ class DefaultController extends Controller
         return false;
     }
 
-    /**
+      /**
      * Checks if a ship overlaps with a list of other ships
      *
      * @param $ship array
@@ -387,3 +388,12 @@ class DefaultController extends Controller
     }
 
 }
+
+/**
+ * Checks if a ship overlaps with a list of other ships
+ *
+ * @param $ship array
+ * @param $all_ships array
+ * @return boolean
+ *
+ */
