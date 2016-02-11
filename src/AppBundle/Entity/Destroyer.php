@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 /**
  *  Destroyer
  */
+
 class Destroyer extends Ship
 {
 

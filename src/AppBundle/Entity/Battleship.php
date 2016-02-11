@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 /**
  *  Battleship
  */
+
 class Battleship extends Ship
 {
 

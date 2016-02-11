@@ -32,6 +32,7 @@ class DefaultController extends Controller
      * @Route("/", name="homepage")
      * @Method({"GET"})
      */
+
     public function indexAction(Request $request)
     {
 
@@ -46,6 +47,7 @@ class DefaultController extends Controller
         /*
          * Place ships on the grid at random
          */
+
         foreach ($shipsList as $ship) {
 
             $not_found = true;
@@ -78,6 +80,7 @@ class DefaultController extends Controller
      * @Route("/", name="strike")
      * @Method({"POST"})
      */
+
     public function strikeAction(Request $request)
     {
 
@@ -118,6 +121,7 @@ class DefaultController extends Controller
      *  @return string
      *
      */
+
     public function checkCoordinates($coordinates)
     {
         if (!$this->isValidCoord($coordinates)) {
@@ -183,6 +187,7 @@ class DefaultController extends Controller
      * @return string
      *
      */
+
     private function outputElem($coordinate)
     {
 
@@ -206,6 +211,7 @@ class DefaultController extends Controller
      * @param $coord array
      * @return boolean
      */
+
     private function isValidCoord($coord)
     {
         // Is only 2 characters
@@ -273,8 +279,9 @@ class DefaultController extends Controller
     }
 
     /**
-     *  Returns the list of ship's coordinates on the board
+     * List of ship's coordinates on the board
      */
+
     public function getShipsCoordinates()
     {
 
@@ -347,6 +354,8 @@ class DefaultController extends Controller
      *
      * Check if any ship is sunk by this hit
      */
+
+
     public function checkSunkShip($coord)
     {
         foreach ($this->getShips() as $ship) {
@@ -365,6 +374,7 @@ class DefaultController extends Controller
      * @return boolean
      *
      */
+
     public function shipOverlaps($ship, $all_ships)
     {
         foreach ($all_ships as $test_s) {

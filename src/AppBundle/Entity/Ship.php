@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 /**
  *  Ship Abstract class
  */
+
 abstract class Ship
 {
 
@@ -54,6 +55,8 @@ abstract class Ship
      *  @return array
      *
      */
+
+
     public function generateCoords($max_col, $max_row)
     {
         $is_horiz = (rand(0,1));
@@ -79,6 +82,7 @@ abstract class Ship
      * @return boolean
      *
      */
+
     public function overlapsWith($other_ship)
     {
         foreach ($other_ship->getCoordinates() as $ship_coord) {

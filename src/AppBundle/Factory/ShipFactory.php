@@ -3,7 +3,7 @@
 namespace AppBundle\Factory;
 
 /**
- * Ship Factory
+ * Ship placer
  */
 class ShipFactory
 {
